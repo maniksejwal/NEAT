@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c19a3e09-ffe8-4259-8f0d-9c1153118d51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/MarI-O" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/NEAT.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/CHANGES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/experiments.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/gene.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/genome.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/innovation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/link.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/neat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/neatmain.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/network.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/nnode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/organism.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/population.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/species.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/include/trait.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/p2mpar3bare.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/p2nv.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/p2test.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/params256.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole1startgenes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole2_markov.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole2startgenes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole2startgenes.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole2startgenes1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/pole2startgenes2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/experiments.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/gene.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/genome.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/innovation.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/link.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/neat.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/neatmain.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/network.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/nnode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/organism.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/population.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/species.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/src/trait.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/test.ne" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT C++/xorstartgenes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/NOTES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/QUICKSTART.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/README.EN.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/README.IT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/UPDATE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/USAGE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.dia" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.jneat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/diagram.wmf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/COMP.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/COMP14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/COMPALL.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Copy of COMPALL.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Copy of RUN.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Execution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Execution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Generation$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Generation$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Generation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Generation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Grafi$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Grafi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Grafi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/MainGui$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/MainGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/MainGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/MyClassLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/ParamValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/ParamValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Parameter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Parameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Parameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/RUN.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/RUN14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Session$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Session$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Session$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Session.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/Session.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/bin_inp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/bin_inp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/bin_inp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/compall14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/data/_xwinner_min_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/data/_xwinner_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/data/genome" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/data/genome_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/data/primitive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/f_bin_inp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/f_inp_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/f_out_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/f_xor_out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/fitness_parity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/fitness_parity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/hs_err_pid1240.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/parametri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/session" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/session_parity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/session_xor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/vectTableModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/vectTableModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/xor_fit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/xor_fit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/xor_out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/xor_out.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/gui/xor_out.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/COMP.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Edge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Edge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/GrafRoutine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/GrafRoutine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/RUN.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Structure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Structure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Vertex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/Vertex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/chartXY$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/chartXY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/chartXY.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/code.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/code.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/mXY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/mXY.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/order_code.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/order_code.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/order_inner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/order_inner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/planeXY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/planeXY.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jGraph/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/CodeConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/CodeConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/EnvConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/EnvConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/EnvRoutine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/EnvRoutine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/IOseq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/IOseq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/NeatConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/NeatConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/NeatRoutine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/NeatRoutine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jNeatCommon/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/COMP.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/COMP14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/COMPALL.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Evolution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Gene.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Gene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Genome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Genome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Innovation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Innovation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Link.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Link.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/NNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/NNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Neat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Neat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Network.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Network.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Organism.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Organism.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Population.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Population.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/RUN.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/RUN14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Species.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Species.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Trait.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/Trait.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/compall14.BAT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/jConsoleNeat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/order_inner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/order_orgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/order_orgs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/order_species.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/order_species.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/jneat/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/HistoryLog$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/HistoryLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/HistoryLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/log/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/compila.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/compilall.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/f_bin_inp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/f_xor_tgt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/genome" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/run.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/testfont.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/testnet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/NEAT Java/testcase/xwinner7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.coveragerc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.idea/neat-python-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-abs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-clamped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-cube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-exp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-gauss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-hat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-identity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-inv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-log.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-relu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-sigmoid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-sin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-softplus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-square.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation-tanh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/activation.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/conf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/config_file.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/ctrnn.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/customization.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/docutils.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/genome-interface.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/glossary.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/index.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/installation.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/make.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/module_summaries.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/neat_overview.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/plot_activations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/reproduction-interface.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/docs/xor_example.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/circuits/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/circuits/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/circuits/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/circuits/evolve.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/circuits/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-fixed/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-fixed/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-fixed/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-fixed/evolve.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-fixed/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-variable/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-variable/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-variable/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-variable/evolve.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/memory-variable/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/neuron-demo/demo-ctrnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/neuron-demo/demo-iznn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/openai-lander/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/openai-lander/config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/openai-lander/evolve.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/openai-lander/upload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/openai-lander/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/evolve_interactive.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/evolve_novelty.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/interactive_config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/novelty_config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/picture2d/render.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/cart_pole.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/config-ctrnn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/config-feedforward" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/evolve-ctrnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/evolve-feedforward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/fitness.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/movie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/test-ctrnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/test-feedforward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/single-pole-balancing/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/clean.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/config-feedforward" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/config-feedforward-partial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/config-spiking" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-feedforward-distributed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-feedforward-parallel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-feedforward-partial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-feedforward-threaded.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-feedforward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-minimal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/evolve-spiking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/examples/xor/visualize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/activations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/aggregations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/attributes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/checkpoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/ctrnn/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/distributed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/genes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/genome.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/graphs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/iznn/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/math_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/nn/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/nn/feed_forward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/nn/recurrent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/parallel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/population.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/reporting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/reproduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/six_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/species.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/stagnation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/statistics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/neat/threaded.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configuration9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/bad_configurationA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_activation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_aggregation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_config_save_restore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_configuration_iznn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_ctrnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_distributed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_feedforward_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_genes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_genome.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_graphs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_iznn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_nn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_population.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_recurrent_network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_reproduction.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_simple_run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_xor_example.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Original NEAT/neat-python-master/tests/test_xor_example_distributed.py" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="407565709">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="TXT" value="1" />
+          <entry key="java" value="1" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-2" />
+    <option name="width" value="1284" />
+    <option name="height" value="804" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c19a3e09-ffe8-4259-8f0d-9c1153118d51" name="Default Changelist" comment="" />
+      <created>1538230989257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1538230989257</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2" y="-29" width="1284" height="833" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959481" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32859176" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gui/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="994">
+          <caret line="904" column="11" selection-start-line="904" selection-start-column="11" selection-end-line="904" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.EN.TXT">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NOTES.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
