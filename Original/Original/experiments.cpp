@@ -288,19 +288,16 @@ Population *pole1_test(int gens) {
 
     ostringstream *fnamebuf;
     int gen;
-
     int expcount;
     int status;
     int runs[NEAT::num_runs];
     int totalevals;
     int samples;  //For averaging
 
-    memset(runs, 0, NEAT::num_runs * sizeof(int));
-
+    memset(runs, 0, NEAT::num_runs * sizeof(int));          // string::memset
     ifstream iFile("pole1startgenes", ios::in);
 
     cout << "START SINGLE POLE BALANCING EVOLUTION" << endl;
-
     cout << "Reading in the start genome" << endl;
     //Read in the start Genome
     iFile >> curword;
@@ -311,16 +308,12 @@ Population *pole1_test(int gens) {
 
     //Run multiple experiments
     for (expcount = 0; expcount < NEAT::num_runs; expcount++) {
-
         cout << "EXPERIMENT #" << expcount << endl;
-
         cout << "Start Genome: " << start_genome << endl;
 
         //Spawn the Population
         cout << "Spawning Population off Genome" << endl;
-
         pop = new Population(start_genome, NEAT::pop_size);
-
         cout << "Verifying Spawned Pop" << endl;
         pop->verify();
 

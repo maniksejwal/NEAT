@@ -18,6 +18,7 @@
 #include <fstream>
 #include <cmath>
 #include <cstring>
+#include <iostream>
 
 double NEAT::trait_param_mut_prob = 0;
 double NEAT::trait_mutation_power = 0; // Power of mutation on a signle trait param 
@@ -131,10 +132,11 @@ int NEAT::getUnitCount(const char *string, const char *set)
 }   
 
 bool NEAT::load_neat_params(const char *filename, bool output) {
-
+	std::cout<<"\tparameters are read from file "<<filename<<std::endl;
     std::ifstream paramFile(filename);
 
 	if(!paramFile) {
+	    std::cout<<"\twrong input for parameters file, received "<<std::endl;
 		return false;
 	}
 	char curword[128];
