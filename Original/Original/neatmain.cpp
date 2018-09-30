@@ -48,6 +48,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
     //list<NNode*> nodelist;
     int pause;
+    // as of now, p doesn't seem to be of any use
     NEAT::Population *p = 0;
     /*
     // GTKMM
