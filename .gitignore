@@ -1,5 +1,6 @@
 *.directory
 *workspace.xml
 *.idea
+*.ipynb_*
 Original/Original/.idea/workspace.xml
 Original/Original/.idea/

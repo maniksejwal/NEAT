@@ -13,3 +13,4 @@ click it.
 **Running the project**  
 **neatmain.cpp** is the main file that runs others.
 It calls NEAT::load_neat_params() (in neat.cpp) and then a function from experiments.cpp based on the user's choice  
+To run, use a .ne file as the parameter. For cMake, the **path** is **../__.ne**      
