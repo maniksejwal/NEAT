@@ -18,7 +18,7 @@
 #include <iostream>
 #include <cmath>
 #include <sstream>
-
+#include<string>
 using namespace NEAT;
 
 Genome::Genome(int id, std::vector<Trait *> t, std::vector<NNode *> n, std::vector<Gene *> g) {

@@ -295,18 +295,20 @@ Population *pole1_test(int gens) {
     int samples;  //For averaging
 
     memset(runs, 0, NEAT::num_runs * sizeof(int));          // string::memset
-    ifstream iFile("pole1startgenes", ios::in);
+    ifstream iFile("../pole1startgenes", ios::in);
 
     cout << "START SINGLE POLE BALANCING EVOLUTION" << endl;
     cout << "Reading in the start genome" << endl;
     //Read in the start Genome
     iFile >> curword;
     iFile >> id;
-    cout << "Reading in Genome id " << id << endl;
+    cout << "Reading in Genome id " << id << endl
+    << "\tiFile " << sizeof(iFile) << endl;
     start_genome = new Genome(id, iFile);
     iFile.close();
 
     //Run multiple experiments
+    cout<<"\trunning multiple experiments";
     for (expcount = 0; expcount < NEAT::num_runs; expcount++) {
         cout << "EXPERIMENT #" << expcount << endl;
         cout << "Start Genome: " << start_genome << endl;
@@ -340,11 +342,10 @@ Population *pole1_test(int gens) {
 
             fnamebuf->clear();
             delete fnamebuf;
-
         }
-
         if (expcount < NEAT::num_runs - 1) delete pop;
     }
+    cout<<"\tran multiple experiments\n";
 
     totalevals = 0;
     samples = 0;
