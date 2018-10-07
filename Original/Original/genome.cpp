@@ -141,15 +141,12 @@ Genome::Genome(int id, std::ifstream &iFile) {
             //strcpy(curword, NEAT::getUnit(curline, curwordnum++, delimiters));
             ss >> curword;
             int idcheck = atoi(curword);
-            //iFile>>idcheck;
             if (idcheck != genome_id) printf("ERROR: id mismatch in genome");
             done = 1;
-        } else if (strcmp(curword, "genomestart") ==
-                   0) {                                //Ignore genomestart if it hasn't been gobbled yet
+        } else if (strcmp(curword, "genomestart") == 0) {       //Ignore genomestart if it hasn't been gobbled yet
             ++curwordnum;
             //cout<<"genomestart"<<endl;
-        } else if (strcmp(curword, "/*") ==
-                   0) {                                        //Ignore comments surrounded by - they get printed to screen
+        } else if (strcmp(curword, "/*") == 0) {       //Ignore comments surrounded by - they get printed to screen
             //strcpy(curword, NEAT::getUnit(curline, curwordnum++, delimiters));
             ss >> curword;
             while (strcmp(curword, "*/") != 0) {
