@@ -618,8 +618,8 @@ Population *pole2_test(int gens, int velocity) {
     }
     memset(winnergens, 0, NEAT::num_runs * sizeof(int));
 
-    char *non_markov_starter = "pole2startgenes2";
-    char *markov_starter = "pole2startgenes1";
+    char *non_markov_starter = "../pole2startgenes2";
+    char *markov_starter = "../pole2startgenes1";
     char *startstring;
 
     if (velocity == 0) startstring = non_markov_starter;

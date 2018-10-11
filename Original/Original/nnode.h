@@ -13,7 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-#ifndef _NNODE_H_
+#ifndef _NNODE_H_													//ignore this warning, code works
 #define _NNODE_H_
 
 #include <algorithm>
