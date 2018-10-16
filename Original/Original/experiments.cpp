@@ -568,13 +568,13 @@ void cart_pole(int action, float *x, float *x_dot, float *theta, float *theta_do
     *theta_dot += TAU * thetaacc;
 }
 
-/* ------------------------------------------------------------------ */
-/* Double pole balacing                                               */
-/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------
+ Double pole balacing
+------------------------------------------------------------------ */
 
-//Perform evolution on double pole balacing, for gens generations
-//If velocity is false, then velocity information will be withheld from the 
-//network population (non-Markov)
+/*Perform evolution on double pole balacing, for gens generations
+If velocity is false, then velocity information will be withheld from the
+network population (non-Markov)*/
 Population *pole2_test(int gens, int velocity) {
     Population *pop = 0;
     Genome *start_genome;
@@ -1125,8 +1125,8 @@ CartPole::CartPole(bool randomize, bool velocity) {
     // CartPole::reset() which is called here
 }
 
-//Faustino Gomez wrote this physics code using the differential equations from 
-//Alexis Weiland's paper and added the Runge-Kutta himself.
+/*Faustino Gomez wrote this physics code using the differential equations from
+Alexis Weiland's paper and added the Runge-Kutta himself.*/
 double CartPole::evalNet(Network *net, int thresh) {
     int steps = 0;
     double input[NUM_INPUTS];
