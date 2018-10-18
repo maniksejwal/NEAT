@@ -421,8 +421,10 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
     Organism *mom; //Parent Organisms
     Organism *dad;
     Organism *baby;  //The new Organism
+    Organism *repeat_mut_baby;  //The new Organism with repeated mutations
 
     Genome *new_genome;  //For holding baby's genes
+    Genome *repeat_mut_genome;  //For repeating mutations
 
     std::vector<Species *>::iterator curspecies;  //For adding baby
     Species *newspecies; //For babies in new Species
@@ -481,7 +483,8 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
     //Create the designated number of offspring for the Species
     //one at a time
     for (count = 0; count < expected_offspring; count++) {
-
+        repeat_mut_genome = NULL;
+        repeat_mut_baby = NULL;
         mut_struct_baby = false;
         mate_baby = false;
 
@@ -507,6 +510,9 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //Note: Superchamp offspring only occur with stolen babies!
             //      Settings used for published experiments did not use this
             if ((thechamp->super_champ_offspring) > 1) {
+
+                repeat_mut_genome = (thechamp->gnome)->duplicate(count, true);
+
                 if ((randfloat() < 0.8) ||
                     (NEAT::mutate_add_link_prob == 0.0))
                     //ABOVE LINE IS FOR:
@@ -537,6 +543,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         else if ((!champ_done) && (expected_offspring > 5)) {
             mom = thechamp; //Mom is the champ
             new_genome = (mom->gnome)->duplicate(count);
+            repeat_mut_genome = (thechamp->gnome)->duplicate(count, true);
             baby = new Organism(0.0, new_genome, generation);  //Baby is just like mommy
             champ_done = true;
         }
@@ -785,6 +792,14 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         baby->mut_struct_baby = mut_struct_baby;
         baby->mate_baby = mate_baby;
 
+        if (repeat_mut_genome != NULL) {
+            repeat_mut_baby = new Organism(0.0, repeat_mut_genome, generation);  //Baby learns from mommy
+            repeat_mut_baby->repeat_baby = true;
+            repeat_mut_baby->mut_struct_baby = mut_struct_baby;
+            repeat_mut_baby->mate_baby = mate_baby;
+            count++;
+        }
+
         curspecies = (pop->species).begin();
         if (curspecies == (pop->species).end()) {
             //Create the first species
@@ -792,6 +807,10 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             (pop->species).push_back(newspecies);
             newspecies->add_Organism(baby);  //Add the baby
             baby->species = newspecies;  //Point the baby to its species
+            if (repeat_mut_baby != NULL) {
+                newspecies->add_Organism(repeat_mut_baby);
+                repeat_mut_baby->species = newspecies;
+            }
         } else {
             comporg = (*curspecies)->first();
             found = false;
@@ -807,6 +826,10 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                     (*curspecies)->add_Organism(baby);
                     baby->species = (*curspecies);  //Point organism to its species
                     found = true;  //Note the search is over
+                    if (repeat_mut_baby != NULL) {
+                        (*curspecies)->add_Organism(repeat_mut_baby);
+                        repeat_mut_baby->species = (*curspecies);
+                    }
                 } else {
                     //Keep searching for a matching species
                     ++curspecies;
@@ -822,6 +845,10 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                 (pop->species).push_back(newspecies);
                 newspecies->add_Organism(baby);  //Add the baby
                 baby->species = newspecies;  //Point baby to its species
+                if (repeat_mut_baby != NULL) {
+                    newspecies->add_Organism(repeat_mut_baby);
+                    repeat_mut_baby->species = newspecies;
+                }
             }
 
 

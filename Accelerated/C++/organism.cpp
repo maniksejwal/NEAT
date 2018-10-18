@@ -18,6 +18,7 @@
 using namespace NEAT;
 
 Organism::Organism(double fit, Genome *g,int gen, const char* md) {
+	repeat_baby= false;
 	fitness=fit;
 	orig_fitness=fitness;
 	gnome=g;
@@ -52,6 +53,7 @@ Organism::Organism(double fit, Genome *g,int gen, const char* md) {
 
 Organism::Organism(const Organism& org)
 {
+	repeat_baby= false;
 	fitness = org.fitness;
 	orig_fitness = org.orig_fitness;
 	gnome = new Genome(*(org.gnome));	// Associative relationship

@@ -31,6 +31,7 @@ namespace NEAT {
 	class Link {
 	public: 
 		double weight; // Weight of connection
+		double delta = 0;		// change in the weight of the connection
 		NNode *in_node; // NNode inputting into the link
 		NNode *out_node; // NNode that the link affects
 		bool is_recurrent;

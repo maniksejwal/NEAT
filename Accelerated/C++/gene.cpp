@@ -51,6 +51,18 @@ Gene::Gene(Gene *g, Trait *tp, NNode *inode, NNode *onode) {
     frozen = g->frozen;
 }
 
+Gene::Gene(Gene *g, Trait *tp, NNode *inode, NNode *onode, double delta=0) {
+    //cout<<"Trying to attach nodes: "<<inode<<" "<<onode<<endl;
+    lnk = new Link(tp, (g->lnk)->weight, inode, onode, (g->lnk)->is_recurrent);
+    lnk->delta=delta;
+    lnk->weight+=delta;
+    innovation_num = g->innovation_num;
+    mutation_num = g->mutation_num;
+    enable = g->enable;
+
+    frozen = g->frozen;
+}
+
 Gene::Gene(const char *argline, std::vector<Trait *> &traits, std::vector<NNode *> &nodes) {
     //Gene parameter holders
     int traitnum;

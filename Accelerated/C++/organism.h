@@ -53,6 +53,7 @@ namespace NEAT {
 		// Track its origin- for debugging or analysis- we can tell how the organism was born
 		bool mut_struct_baby;
 		bool mate_baby;
+		bool repeat_baby;
 
 		// MetaData for the object
 		char metadata[128];

@@ -986,6 +986,86 @@ Genome *Genome::duplicate(int new_id) {
 
 }
 
+Genome *Genome::duplicate(int new_id, bool repeat_mutations) {
+    //Collections for the new Genome
+    std::vector<Trait *> traits_dup;
+    std::vector<NNode *> nodes_dup;
+    std::vector<Gene *> genes_dup;
+
+    //Iterators for the old Genome
+    std::vector<Trait *>::iterator curtrait;
+    std::vector<NNode *>::iterator curnode;
+    std::vector<Gene *>::iterator curgene;
+
+    //New item pointers
+    Trait *newtrait;
+    NNode *newnode;
+    Gene *newgene;
+    Trait *assoc_trait;  //Trait associated with current item
+
+    NNode *inode; //For forming a gene
+    NNode *onode; //For forming a gene
+    Trait *traitptr;
+
+    Genome *newgenome;
+
+    //verify();
+
+    //Duplicate the traits
+    for (curtrait = traits.begin(); curtrait != traits.end(); ++curtrait) {
+        newtrait = new Trait(*curtrait);
+        traits_dup.push_back(newtrait);
+    }
+
+    //Duplicate NNodes
+    for (curnode = nodes.begin(); curnode != nodes.end(); ++curnode) {
+        //First, find the trait that this node points to
+        if (((*curnode)->nodetrait) == 0) assoc_trait = 0;
+        else {
+            curtrait = traits_dup.begin();
+            while (((*curtrait)->trait_id) != (((*curnode)->nodetrait)->trait_id))
+                ++curtrait;
+            assoc_trait = (*curtrait);
+        }
+
+        newnode = new NNode(*curnode, assoc_trait);
+
+        (*curnode)->dup = newnode;  //Remember this node's old copy
+        //    (*curnode)->activation_count=55;
+        nodes_dup.push_back(newnode);
+    }
+
+    //Duplicate Genes
+    for (curgene = genes.begin(); curgene != genes.end(); ++curgene) {
+        //First find the nodes connected by the gene's link
+
+        inode = (((*curgene)->lnk)->in_node)->dup;
+        onode = (((*curgene)->lnk)->out_node)->dup;
+        double delta = repeat_mutations
+                ? 0.75 * ((*curgene)->lnk)->delta : 0;
+
+        //Get a pointer to the trait expressed by this gene
+        traitptr = ((*curgene)->lnk)->linktrait;
+        if (traitptr == 0) assoc_trait = 0;
+        else {
+            curtrait = traits_dup.begin();
+            while (((*curtrait)->trait_id) != (traitptr->trait_id))
+                ++curtrait;
+            assoc_trait = (*curtrait);
+        }
+
+        newgene = new Gene(*curgene, assoc_trait, inode, onode, delta);
+        genes_dup.push_back(newgene);
+
+    }
+
+    //Finally, return the genome
+    newgenome = new Genome(new_id, traits_dup, nodes_dup, genes_dup);
+
+    return newgenome;
+
+}
+
 void Genome::mutate_random_trait() {
     std::vector<Trait *>::iterator thetrait; //Trait to be mutated
     int traitnum;
@@ -1097,7 +1177,6 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
     //Wright variables
     //double oldval;
     //double perturb;
-
 
     // --------------- WRIGHT'S MUTATION METHOD --------------
     /*
@@ -1243,9 +1322,11 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
             //std::cout << "RANDOM: " << randnum << " " << randposneg() << " " << randfloat() << " " << power << " " << powermod << std::endl;
             if (mut_type == GAUSSIAN) {
                 randchoice = randfloat();
-                if (randchoice > gausspoint)
+                (*curgene)->lnk->delta = 0;
+                if (randchoice > gausspoint) {
                     ((*curgene)->lnk)->weight += randnum;
-                else if (randchoice > coldgausspoint)
+                    (*curgene)->lnk->delta = randnum;
+                } else if (randchoice > coldgausspoint)
                     ((*curgene)->lnk)->weight = randnum;
             } else if (mut_type == COLDGAUSSIAN)
                 ((*curgene)->lnk)->weight = randnum;
