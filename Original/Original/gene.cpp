@@ -67,7 +67,7 @@ Gene::Gene(const char *argline, std::vector<Trait*> &traits, std::vector<NNode*>
 	//Get the gene parameters
 
     std::stringstream ss(argline);
-
+/*
 	//char curword[128];
 	//char delimiters[] = " \n";
 	//int curwordnum = 0;
@@ -88,7 +88,7 @@ Gene::Gene(const char *argline, std::vector<Trait*> &traits, std::vector<NNode*>
 	//mutation_num = atof(curword);
 	//strcpy(curword, NEAT::getUnit(argline, curwordnum++, delimiters));
 	//enable = (bool)(atoi(curword));
-
+*/
     ss >> traitnum >> inodenum >> onodenum >> weight >> recur >> innovation_num >> mutation_num >> enable;
     //std::cout << traitnum << " " << inodenum << " " << onodenum << " ";
     //std::cout << weight << " " << recur << " " << innovation_num << " ";

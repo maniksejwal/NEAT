@@ -408,9 +408,11 @@ bool Population::epoch(int generation) {
 
     int orgcount;
 
-    //The fractional parts of expected offspring that can be
-    //Used only when they accumulate above 1 for the purposes of counting
-    //Offspring
+    /*
+    The fractional parts of expected offspring that can be
+    Used only when they accumulate above 1 for the purposes of counting
+    Offspring
+    */
     double skim;
     int total_expected;  //precision checking
     int total_organisms = organisms.size();
@@ -420,9 +422,11 @@ bool Population::epoch(int generation) {
 
     int pause;
 
-    //Rights to make babies can be stolen from inferior species
-    //and given to their superiors, in order to concentrate exploration on
-    //the best species
+    /*
+    Rights to make babies can be stolen from inferior species
+    and given to their superiors, in order to concentrate exploration on
+    the best species
+     */
     int NUM_STOLEN = NEAT::babies_stolen; //Number of babies to steal
     int one_fifth_stolen;
     int one_tenth_stolen;
@@ -441,11 +445,13 @@ bool Population::epoch(int generation) {
     double compat_mod = 0.3;  //Modify compat thresh to control speciation
 
 
-    //Keeping species diverse
-    //This commented out code forces the system to aim for
-    // num_species species at all times, enforcing diversity
-    //This tinkers with the compatibility threshold, which
-    // normally would be held constant
+    /*
+    Keeping species diverse
+    This commented out code forces the system to aim for
+    num_species species at all times, enforcing diversity
+    This tinkers with the compatibility threshold, which
+     normally would be held constant
+    */
     /*
     if (generation>1) {
         if (num_species<num_species_target)
@@ -464,9 +470,11 @@ bool Population::epoch(int generation) {
         sorted_species.push_back(*curspecies);
     }
 
-    //Sort the Species by max fitness (Use an extra list to do this)
-    //These need to use ORIGINAL fitness
-    //sorted_species.qsort(order_species);
+    /*
+    Sort the Species by max fitness (Use an extra list to do this)
+    These need to use ORIGINAL fitness
+    sorted_species.qsort(order_species);
+    */
     std::sort(sorted_species.begin(), sorted_species.end(), order_species);
 
     //Flag the lowest performing species over age 20 every 30 generations
@@ -484,14 +492,16 @@ bool Population::epoch(int generation) {
     std::cout << "Number of Species: " << num_species << std::endl;
     std::cout << "compat_thresh: " << compat_threshold << std::endl;
 
-    //Use Species' ages to modify the objective fitness of organisms
-    // in other words, make it more fair for younger species
-    // so they have a chance to take hold
-    //Also penalize stagnant species
-    //Then adjust the fitness using the species size to "share" fitness
-    //within a species.
-    //Then, within each Species, mark for death
-    //those below survival_thresh*average
+    /*
+    Use Species' ages to modify the objective fitness of organisms
+    in other words, make it more fair for younger species
+    so they have a chance to take hold
+    Also penalize stagnant species
+    Then adjust the fitness using the species size to "share" fitness
+    within a species.
+    Then, within each Species, mark for death
+    those below survival_thresh*average
+    */
     for (curspecies = species.begin(); curspecies != species.end(); ++curspecies) {
         (*curspecies)->adjust_fitness();
     }
@@ -534,13 +544,14 @@ bool Population::epoch(int generation) {
         //Give the extra offspring to the best species
         ++(best_species->expected_offspring);
         final_expected++;
-
-        //If we still arent at total, there is a problem
-        //Note that this can happen if a stagnant Species
-        //dominates the population and then gets killed off by its age
-        //Then the whole population plummets in fitness
-        //If the average fitness is allowed to hit 0, then we no longer have
-        //an average we can use to assign offspring.
+        /*
+        If we still aren't at total, there is a problem
+        Note that this can happen if a stagnant Species
+        dominates the population and then gets killed off by its age
+        Then the whole population plummets in fitness
+        If the average fitness is allowed to hit 0, then we no longer have
+        an average we can use to assign offspring.
+         */
         if (final_expected < total_organisms) {
             //      cout<<"Population died!"<<endl;
             //cin>>pause;

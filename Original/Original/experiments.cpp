@@ -94,11 +94,8 @@ Population *xor_test(int gens) {
             //Clear output filename
             fnamebuf->clear();
             delete fnamebuf;
-
         }
-
         if (expcount < NEAT::num_runs - 1) delete pop;
-
     }
 
     //Average and print stats
@@ -416,7 +413,6 @@ int pole1_epoch(Population *pop, int generation, char *filename) {
 
     if (win) return ((generation - 1) * NEAT::pop_size + winnernum);
     else return 0;
-
 }
 
 bool pole1_evaluate(Organism *org) {
