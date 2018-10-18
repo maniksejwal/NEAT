@@ -222,50 +222,50 @@ bool Species::print_to_file(std::ostream &outFile) {
     char tempbuf4[1024];
     sprintf(tempbuf4, "\n\n");
     outFile << tempbuf4;
-
     return true;
-
 }
 
 
-//Prints the champions of each species to files    
-//starting with directory_prefix
-//The file name are as follows: [prefix]g[generation_num]cs[species_num]
-//Thus, they can be indexed by generation or species
-//bool Population::print_species_champs_tofiles(char *directory_prefix, int generation) {
-//
-//ostrstream *fnamebuf; //File for output
-//std::vector<Species*>::iterator curspecies;
-//Organism *champ;
-//int pause;
-//
-//std::cout<<generation<<std::endl;
-//std::cout<<"Printing species champs to file"<<std::endl;
-////cin>>pause;
-//
-////Step through the Species and print their champs to files
-//for(curspecies=species.begin();curspecies!=species.end();++curspecies) {
-//
-//std::cout<<"Printing species "<<(*curspecies)->id<<" champ to file"<<std::endl;
-//
-////cin>>pause;
-//
-////Get the champ of this species
-//champ=(*curspecies)->get_champ();
-//
-////Revise the file name
-//fnamebuf=new ostrstream();
-//(*fnamebuf)<<directory_prefix<<"g"<<generation<<"cs"<<(*curspecies)->id<<ends;  //needs end marker
-//
-////Print to file using organism printing (includes comments)
-//champ->print_to_file(fnamebuf->str());
-//
-////Reset the name
-//fnamebuf->clear();
-//delete fnamebuf;
-//}
-//return true;
-//}
+/*
+Prints the champions of each species to files
+starting with directory_prefix
+The file name are as follows: [prefix]g[generation_num]cs[species_num]
+Thus, they can be indexed by generation or species
+bool Population::print_species_champs_tofiles(char *directory_prefix, int generation) {
+
+ostrstream *fnamebuf; //File for output
+std::vector<Species*>::iterator curspecies;
+Organism *champ;
+int pause;
+
+std::cout<<generation<<std::endl;
+std::cout<<"Printing species champs to file"<<std::endl;
+//cin>>pause;
+
+//Step through the Species and print their champs to files
+for(curspecies=species.begin();curspecies!=species.end();++curspecies) {
+
+std::cout<<"Printing species "<<(*curspecies)->id<<" champ to file"<<std::endl;
+
+//cin>>pause;
+
+//Get the champ of this species
+champ=(*curspecies)->get_champ();
+
+//Revise the file name
+fnamebuf=new ostrstream();
+(*fnamebuf)<<directory_prefix<<"g"<<generation<<"cs"<<(*curspecies)->id<<ends;  //needs end marker
+
+//Print to file using organism printing (includes comments)
+champ->print_to_file(fnamebuf->str());
+
+//Reset the name
+fnamebuf->clear();
+delete fnamebuf;
+}
+return true;
+}
+*/
 
 void Species::adjust_fitness() {
     std::vector<Organism *>::iterator curorg;
@@ -533,15 +533,15 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
 
             thechamp->super_champ_offspring--;
         }
-        //If we have a Species champion, just clone it
+            //If we have a Species champion, just clone it
         else if ((!champ_done) && (expected_offspring > 5)) {
             mom = thechamp; //Mom is the champ
             new_genome = (mom->gnome)->duplicate(count);
             baby = new Organism(0.0, new_genome, generation);  //Baby is just like mommy
             champ_done = true;
         }
-        //First, decide whether to mate or mutate
-        //If there is only one organism in the pool, then always mutate
+            //First, decide whether to mate or mutate
+            //If there is only one organism in the pool, then always mutate
         else if ((randfloat() < NEAT::mutate_only_prob) ||
                  poolsize == 0) {
 
@@ -553,23 +553,20 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             for (orgcount = 0; orgcount < orgnum; orgcount++)
                 ++curorg;
 
+            /*
+            //Roulette Wheel
+            marble=randfloat()*total_fitness;
+            curorg=organisms.begin();
+            spin=(*curorg)->fitness;
+            while(spin<marble) {
+            ++curorg;
 
-
-            ////Roulette Wheel
-            //marble=randfloat()*total_fitness;
-            //curorg=organisms.begin();
-            //spin=(*curorg)->fitness;
-            //while(spin<marble) {
-            //++curorg;
-
-            ////Keep the wheel spinning
-            //spin+=(*curorg)->fitness;
-            //}
-            ////Finished roulette
-            //
-
+            //Keep the wheel spinning
+            spin+=(*curorg)->fitness;
+            }
+            //Finished roulette
+            */
             mom = (*curorg);
-
             new_genome = (mom->gnome)->duplicate(count);
 
             //Do the mutation depending on probabilities of
@@ -617,33 +614,29 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                     new_genome->mutate_gene_reenable();
                 }
             }
-
             baby = new Organism(0.0, new_genome, generation);
-
         }
 
             //Otherwise we should mate
         else {
-
             //Choose the random mom
             orgnum = randint(0, poolsize);
             curorg = organisms.begin();
-            for (orgcount = 0; orgcount < orgnum; orgcount++)
-                ++curorg;
+            for (orgcount = 0; orgcount < orgnum; orgcount++) ++curorg;
 
+            /*
+            //Roulette Wheel
+            marble=randfloat()*total_fitness;
+            curorg=organisms.begin();
+            spin=(*curorg)->fitness;
+            while(spin<marble) {
+            ++curorg;
 
-            ////Roulette Wheel
-            //marble=randfloat()*total_fitness;
-            //curorg=organisms.begin();
-            //spin=(*curorg)->fitness;
-            //while(spin<marble) {
-            //++curorg;
-
-            ////Keep the wheel spinning
-            //spin+=(*curorg)->fitness;
-            //}
-            ////Finished roulette
-            //
+            //Keep the wheel spinning
+            spin+=(*curorg)->fitness;
+            }
+            //Finished roulette
+            */
 
             mom = (*curorg);
 
@@ -657,24 +650,23 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                 for (orgcount = 0; orgcount < orgnum; orgcount++)
                     ++curorg;
 
+                /*
+                //Use a roulette wheel
+                marble=randfloat()*total_fitness;
+                curorg=organisms.begin();
+                spin=(*curorg)->fitness;
+                while(spin<marble) {
+                ++curorg;
+                }
 
-                ////Use a roulette wheel
-                //marble=randfloat()*total_fitness;
-                //curorg=organisms.begin();
-                //spin=(*curorg)->fitness;
-                //while(spin<marble) {
-                //++curorg;
-                //}
-
-                ////Keep the wheel spinning
-                //spin+=(*curorg)->fitness;
-                //}
-                ////Finished roulette
-                //
+                //Keep the wheel spinning
+                spin+=(*curorg)->fitness;
+                }
+                //Finished roulette
+                */
 
                 dad = (*curorg);
             } else {
-
                 //Mate outside Species
                 randspecies = this;
 
@@ -698,17 +690,18 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                     ++giveup;
                 }
 
-                //OLD WAY: Choose a random dad from the random species
-                //Select a random dad from the random Species
-                //NOTE:  It is possible that a mating could take place
-                //       here between the mom and a baby from the NEW
-                //       generation in some other Species
-                //orgnum=randint(0,(randspecies->organisms).size()-1);
-                //curorg=(randspecies->organisms).begin();
-                //for(orgcount=0;orgcount<orgnum;orgcount++)
-                //  ++curorg;
-                //dad=(*curorg);
-
+                /*
+                OLD WAY: Choose a random dad from the random species
+                Select a random dad from the random Species
+                NOTE:  It is possible that a mating could take place
+                       here between the mom and a baby from the NEW
+                       generation in some other Species
+                orgnum=randint(0,(randspecies->organisms).size()-1);
+                curorg=(randspecies->organisms).begin();
+                for(orgcount=0;orgcount<orgnum;orgcount++)
+                  ++curorg;
+                dad=(*curorg);
+                */
                 //New way: Make dad be a champ from the random species
                 dad = (*((randspecies->organisms).begin()));
 

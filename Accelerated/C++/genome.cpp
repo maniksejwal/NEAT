@@ -19,6 +19,7 @@
 #include <cmath>
 #include <sstream>
 #include<string>
+
 using namespace NEAT;
 
 Genome::Genome(int id, std::vector<Trait *> t, std::vector<NNode *> n, std::vector<Gene *> g) {
@@ -1099,58 +1100,56 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
 
 
     // --------------- WRIGHT'S MUTATION METHOD --------------
+    /*
+    //Use the fact that we know ends are newest
+    gene_total=(double) genes.size();
+    endpart=gene_total*0.8;
+    num=0.0;
 
-    ////Use the fact that we know ends are newest
-    //gene_total=(double) genes.size();
-    //endpart=gene_total*0.8;
-    //num=0.0;
+    for(curgene=genes.begin();curgene!=genes.end();curgene++) {
 
-    //for(curgene=genes.begin();curgene!=genes.end();curgene++) {
+    //Mutate rate 0.2 controls how many params mutate in the list
+    if ((randfloat()<rate)||
+    ((gene_total>=10.0)&&(num>endpart))) {
 
-    ////Mutate rate 0.2 controls how many params mutate in the list
-    //if ((randfloat()<rate)||
-    //((gene_total>=10.0)&&(num>endpart))) {
+    oldval=((*curgene)->lnk)->weight;
 
-    //oldval=((*curgene)->lnk)->weight;
+    //The amount to perturb the value by
+    perturb=randfloat()*power;
 
-    ////The amount to perturb the value by
-    //perturb=randfloat()*power;
+    //Once in a while leave the end part alone
+    if (num>endpart)
+    if (randfloat()<0.2) perturb=0;
 
-    ////Once in a while leave the end part alone
-    //if (num>endpart)
-    //if (randfloat()<0.2) perturb=0;
+    //Decide positive or negative
+    if (gRandGen.randI()%2) {
+    //Positive case
 
-    ////Decide positive or negative
-    //if (gRandGen.randI()%2) {
-    ////Positive case
+    //if it goes over the max, find something smaller
+    if (oldval+perturb>100.0) {
+    perturb=(100.0-oldval)*randfloat();
+    }
 
-    ////if it goes over the max, find something smaller
-    //if (oldval+perturb>100.0) {
-    //perturb=(100.0-oldval)*randfloat();
-    //}
+    ((*curgene)->lnk)->weight+=perturb;
 
-    //((*curgene)->lnk)->weight+=perturb;
+    }
+    else {
+    //Negative case
 
-    //}
-    //else {
-    ////Negative case
+    //if it goes below the min, find something smaller
+    if (oldval-perturb<100.0) {
+    perturb=(oldval+100.0)*randfloat();
+    }
 
-    ////if it goes below the min, find something smaller
-    //if (oldval-perturb<100.0) {
-    //perturb=(oldval+100.0)*randfloat();
-    //}
+    ((*curgene)->lnk)->weight-=perturb;
 
-    //((*curgene)->lnk)->weight-=perturb;
+    }
+    }
 
-    //}
-    //}
+    num+=1.0;
 
-    //num+=1.0;
-
-    //}
-
-
-
+    }
+    */
     // ------------------------------------------------------
 
     if (randfloat() > 0.5) severe = true;
@@ -1164,6 +1163,7 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
     //powermod=randfloat();
     powermod = 1.0;
 
+    /*
     //Possibility: Jiggle the newest gene randomly
     //if (gene_total>10.0) {
     //  lastgene=genes.end();
@@ -1172,7 +1172,6 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
     //    ((*lastgene)->lnk)->weight+=0.5*randposneg()*randfloat();
     //}
 
-/*
 	//KENHACK: NOTE THIS HAS BEEN MAJORLY ALTERED
 	//     THE LOOP BELOW IS THE ORIGINAL METHOD
 	if (mut_type==COLDGAUSSIAN) {
@@ -1196,32 +1195,29 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
 			else if (((*curgene)->lnk)->weight<-1.0) ((*curgene)->lnk)->weight=-1.0;
 		}
 	}
-
 	*/
-
 
     //Loop on all genes  (ORIGINAL METHOD)
     for (curgene = genes.begin(); curgene != genes.end(); curgene++) {
+        /*
+        Possibility: Have newer genes mutate with higher probability
+        Only make mutation power vary along genome if it's big enough
+        if (gene_total>=10.0) {
+        This causes the mutation power to go up towards the end up the genome
+        powermod=((power-0.7)/gene_total)*num+0.7;
+        }
+        else powermod=power;
 
-
-        //Possibility: Have newer genes mutate with higher probability
-        //Only make mutation power vary along genome if it's big enough
-        //if (gene_total>=10.0) {
-        //This causes the mutation power to go up towards the end up the genome
-        //powermod=((power-0.7)/gene_total)*num+0.7;
-        //}
-        //else powermod=power;
-
-        //The following if determines the probabilities of doing cold gaussian
-        //mutation, meaning the probability of replacing a link weight with
-        //another, entirely random weight.  It is meant to bias such mutations
-        //to the tail of a genome, because that is where less time-tested genes
-        //reside.  The gausspoint and coldgausspoint represent values above
-        //which a random float will signify that kind of mutation.
+        The following if determines the probabilities of doing cold gaussian
+        mutation, meaning the probability of replacing a link weight with
+        another, entirely random weight.  It is meant to bias such mutations
+        to the tail of a genome, because that is where less time-tested genes
+        reside.  The gausspoint and coldgausspoint represent values above
+        which a random float will signify that kind of mutation.
+         */
 
         //Don't mutate weights of frozen links
         if (!((*curgene)->frozen)) {
-
             if (severe) {
                 gausspoint = 0.3;
                 coldgausspoint = 0.1;
@@ -1263,12 +1259,8 @@ void Genome::mutate_link_weights(double power, double rate, mutator mut_type) {
             (*curgene)->mutation_num = ((*curgene)->lnk)->weight;
 
             num += 1.0;
-
         }
-
     } //end for loop
-
-
 }
 
 void Genome::mutate_toggle_enable(int times) {

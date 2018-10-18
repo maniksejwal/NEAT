@@ -95,7 +95,6 @@ void Trait::print_to_file(std::ofstream &outFile) {
         outFile << params[count] << " ";
 
     outFile << std::endl;
-
 }
 
 
