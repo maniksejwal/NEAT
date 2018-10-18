@@ -21,18 +21,20 @@
 
 namespace NEAT {
 
-	// ------------------------------------------------------------------ 
-	// TRAIT: A Trait is a group of parameters that can be expressed     
-	//        as a group more than one time.  Traits save a genetic      
-	//        algorithm from having to search vast parameter landscapes  
-	//        on every node.  Instead, each node can simply point to a trait 
-	//        and those traits can evolve on their own 
+	// ------------------------------------------------------------------
+	// TRAIT: A Trait is a group of parameters that can be expressed
+	//        as a group more than one time.  Traits save a genetic
+	//        algorithm from having to search vast parameter landscapes
+	//        on every node.  Instead, each node can simply point to a trait
+	//        and those traits can evolve on their own
 	class Trait {
 
-		// ************ LEARNING PARAMETERS *********** 
-		// The following parameters are for use in    
+/*
+		// ************ LEARNING PARAMETERS ***********
+		// The following parameters are for use in
 		//   neurons that learn through habituation,
-		//   sensitization, or Hebbian-type processes  
+		//   sensitization, or Hebbian-type processes
+*/
 
 	public:
 		int trait_id; // Used in file saving and loading
