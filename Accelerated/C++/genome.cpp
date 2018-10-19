@@ -22,11 +22,12 @@
 
 using namespace NEAT;
 
-Genome::Genome(int id, std::vector<Trait *> t, std::vector<NNode *> n, std::vector<Gene *> g) {
+Genome::Genome(int id, std::vector<Trait *> t, std::vector<NNode *> n, std::vector<Gene *> g, double fitness) {
     genome_id = id;
     traits = t;
     nodes = n;
     genes = g;
+    parent_fitness = fitness;
 }
 
 
@@ -908,7 +909,7 @@ double Genome::get_last_gene_innovnum() {
     return ((*(genes.end() - 1))->innovation_num) + 1;
 }
 
-Genome *Genome::duplicate(int new_id, int repeat_mutations) {
+Genome *Genome::duplicate(int new_id, int repeat_mutations, double parent_fitnes) {
     //Collections for the new Genome
     std::vector<Trait *> traits_dup;
     std::vector<NNode *> nodes_dup;
@@ -963,7 +964,7 @@ Genome *Genome::duplicate(int new_id, int repeat_mutations) {
 
         inode = (((*curgene)->lnk)->in_node)->dup;
         onode = (((*curgene)->lnk)->out_node)->dup;
-        double delta = repeat_mutations * 0.75 * ((*curgene)->lnk)->delta;
+        double delta = repeat_mutations * 0.25 * ((*curgene)->lnk)->delta;
 
         //Get a pointer to the trait expressed by this gene
         traitptr = ((*curgene)->lnk)->linktrait;
@@ -981,7 +982,7 @@ Genome *Genome::duplicate(int new_id, int repeat_mutations) {
     }
 
     //Finally, return the genome
-    newgenome = new Genome(new_id, traits_dup, nodes_dup, genes_dup);
+    newgenome = new Genome(new_id, traits_dup, nodes_dup, genes_dup, parent_fitnes);
 
     return newgenome;
 
@@ -2234,7 +2235,7 @@ Genome *Genome::mate_multipoint(Genome *g, int genomeid, double fitness1, double
 
     }
 
-    new_genome = new Genome(genomeid, newtraits, newnodes, newgenes);
+    new_genome = new Genome(genomeid, newtraits, newnodes, newgenes, 0);
 
     //Return the baby Genome
     return (new_genome);
@@ -2565,7 +2566,7 @@ Genome *Genome::mate_multipoint_avg(Genome *g, int genomeid, double fitness1, do
     delete avgene;  //Clean up used object
 
     //Return the baby Genome
-    return (new Genome(genomeid, newtraits, newnodes, newgenes));
+    return (new Genome(genomeid, newtraits, newnodes, newgenes, 0));
 
 }
 
@@ -2849,7 +2850,7 @@ Genome *Genome::mate_singlepoint(Genome *g, int genomeid) {
     delete avgene;  //Clean up used object
 
     //Return the baby Genome
-    return (new Genome(genomeid, newtraits, newnodes, newgenes));
+    return (new Genome(genomeid, newtraits, newnodes, newgenes, 0));
 
 }
 

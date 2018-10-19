@@ -339,6 +339,7 @@ Population *pole1_test(int gens) {
 
             fnamebuf->clear();
             delete fnamebuf;
+            cout<<"\tGeneration " << gen << "\tRun " << expcount << endl;
         }
         if (expcount < NEAT::num_runs - 1) delete pop;
     }
@@ -689,7 +690,7 @@ Population *pole2_test(int gens, int velocity) {
                 gen = gens + 1;
 
 #ifndef NO_SCREEN_OUT
-            cout << "gen = " << gen << " gens = " << gens << endl;
+            cout << "gen = " << gen << " gens = " << gens << " run = " << run << endl;
 #endif
 
             if (gen == (gens - 1)) oFile << "FAIL: Last gen on run " << run << endl;

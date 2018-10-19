@@ -231,7 +231,7 @@ bool Population::clone(Genome *g, int size, float power) {
     Genome *new_genome;
     Organism *new_organism;
 
-    new_genome = g->duplicate(1, 0);
+    new_genome = g->duplicate(1, 0, 0);
     new_organism = new Organism(0.0, new_genome, 1);
     organisms.push_back(new_organism);
 
@@ -239,7 +239,7 @@ bool Population::clone(Genome *g, int size, float power) {
     //Start with perturbed linkweights
     for (count = 2; count <= size; count++) {
         //cout<<"CREATING ORGANISM "<<count<<endl;
-        new_genome = g->duplicate(count, 0);
+        new_genome = g->duplicate(count, 0, 0);
         if (power > 0)
             new_genome->mutate_link_weights(power, 1.0, GAUSSIAN);
 
@@ -268,7 +268,7 @@ bool Population::spawn(Genome *g, int size) {
     for (count = 1; count <= size; count++) {
         //cout<<"CREATING ORGANISM "<<count<<endl;
 
-        new_genome = g->duplicate(count, 0);
+        new_genome = g->duplicate(count, 0, 0);
         //new_genome->mutate_link_weights(1.0,1.0,GAUSSIAN);
         new_genome->mutate_link_weights(1.0, 1.0, COLDGAUSSIAN);
         new_genome->randomize_traits();

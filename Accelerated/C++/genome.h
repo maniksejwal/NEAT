@@ -45,6 +45,7 @@ namespace NEAT {
 
 	public:
 		int genome_id;
+		double parent_fitness = 0;
 
 		std::vector<Trait*> traits; //parameter conglomerations
 		std::vector<NNode*> nodes; //List of NNodes for the Network
@@ -58,7 +59,7 @@ namespace NEAT {
 		void print_genome(); //Displays Genome on screen
 
 		//Constructor which takes full genome specs and puts them into the new one
-		Genome(int id, std::vector<Trait*> t, std::vector<NNode*> n, std::vector<Gene*> g);
+		Genome(int id, std::vector<Trait*> t, std::vector<NNode*> n, std::vector<Gene*> g, double parent_fitness);
 
 		//Constructor which takes in links (not genes) and creates a Genome
 		Genome(int id, std::vector<Trait*> t, std::vector<NNode*> n, std::vector<Link*> links);
@@ -102,7 +103,7 @@ namespace NEAT {
 		void print_to_filename(char *filename);
 
 		// Duplicate this Genome to create a new one with the specified id and repeat mutations
-		Genome *duplicate(int new_id, int repeat_mutations);
+		Genome *duplicate(int new_id, int repeat_mutations, double parent_fitnes);
 
 		// For debugging: A number of tests can be run on a genome to check its
 		// integrity

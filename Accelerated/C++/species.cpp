@@ -499,7 +499,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         //If we have a super_champ (Population champion), finish off some special clones
         if ((thechamp->super_champ_offspring) > 0) {
             mom = thechamp;
-            new_genome = (mom->gnome)->duplicate(count, 0);
+            new_genome = (mom->gnome)->duplicate(count, 0, 0);
 
             if ((thechamp->super_champ_offspring) == 1) {
 
@@ -511,7 +511,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //      Settings used for published experiments did not use this
             if ((thechamp->super_champ_offspring) > 1) {
 
-                repeat_mut_genome = (mom->gnome)->duplicate(count, 1);
+                repeat_mut_genome = (mom->gnome)->duplicate(count+1, 1, mom->fitness);
 
                 if ((randfloat() < 0.8) ||
                     (NEAT::mutate_add_link_prob == 0.0))
@@ -542,8 +542,8 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //If we have a Species champion, just clone it
         else if ((!champ_done) && (expected_offspring > 5)) {
             mom = thechamp; //Mom is the champ
-            new_genome = (mom->gnome)->duplicate(count, 0);
-            repeat_mut_genome = (thechamp->gnome)->duplicate(count, 1);
+            new_genome = (mom->gnome)->duplicate(count, 0, 0);
+            repeat_mut_genome = (mom->gnome)->duplicate(count+1, 1, mom->fitness);
             baby = new Organism(0.0, new_genome, generation);  //Baby is just like mommy
             champ_done = true;
         }
@@ -574,9 +574,11 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //Finished roulette
             */
             mom = (*curorg);
-            new_genome = (mom->gnome)->duplicate(count, 0);
-            if(mom->fitness > mom->orig_fitness) repeat_mut_genome = (thechamp->gnome)->duplicate(count, 1);
-            else if(mom->fitness < mom->orig_fitness) repeat_mut_genome = (thechamp->gnome)->duplicate(count, -1);
+            new_genome = (mom->gnome)->duplicate(count, 0, 0);
+            if (mom->gnome->parent_fitness >0 && mom->fitness > mom->gnome->parent_fitness)
+                repeat_mut_genome = (mom->gnome)->duplicate(count+1, 1, mom->fitness);
+            else if (mom->gnome->parent_fitness >0 && mom->fitness < mom->gnome->parent_fitness)
+                repeat_mut_genome = (mom->gnome)->duplicate(count+1, -1, mom->fitness);
 
             //Do the mutation depending on probabilities of
             //various mutations
@@ -794,7 +796,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         baby->mut_struct_baby = mut_struct_baby;
         baby->mate_baby = mate_baby;
 
-        if (repeat_mut_genome != NULL) {
+        if (repeat_mut_genome != NULL && count+1 < expected_offspring) {
             repeat_mut_baby = new Organism(0.0, repeat_mut_genome, generation);  //Baby learns from mommy
             repeat_mut_baby->repeat_baby = true;
             repeat_mut_baby->mut_struct_baby = mut_struct_baby;
@@ -809,7 +811,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             (pop->species).push_back(newspecies);
             newspecies->add_Organism(baby);  //Add the baby
             baby->species = newspecies;  //Point the baby to its species
-            if (repeat_mut_baby != NULL) {
+            if (repeat_mut_baby != NULL && count+1 < expected_offspring) {
                 newspecies->add_Organism(repeat_mut_baby);
                 repeat_mut_baby->species = newspecies;
             }
@@ -828,7 +830,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                     (*curspecies)->add_Organism(baby);
                     baby->species = (*curspecies);  //Point organism to its species
                     found = true;  //Note the search is over
-                    if (repeat_mut_baby != NULL) {
+                    if (repeat_mut_baby != NULL && count+1 < expected_offspring) {
                         (*curspecies)->add_Organism(repeat_mut_baby);
                         repeat_mut_baby->species = (*curspecies);
                     }
@@ -847,7 +849,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                 (pop->species).push_back(newspecies);
                 newspecies->add_Organism(baby);  //Add the baby
                 baby->species = newspecies;  //Point baby to its species
-                if (repeat_mut_baby != NULL) {
+                if (repeat_mut_baby != NULL && count+1 < expected_offspring) {
                     newspecies->add_Organism(repeat_mut_baby);
                     repeat_mut_baby->species = newspecies;
                 }
