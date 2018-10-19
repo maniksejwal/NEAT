@@ -1058,6 +1058,7 @@ bool pole2_evaluate(Organism *org, bool velocity, CartPole *thecart) {
     cout << "   ";
     if (org->mut_struct_baby) cout << " [struct]";
     if (org->mate_baby) cout << " [mate]";
+    if (org->repeat_baby) cout << " [repeat]";
     cout << endl;
 #endif
 

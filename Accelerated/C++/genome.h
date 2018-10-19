@@ -101,11 +101,8 @@ namespace NEAT {
 		// Wrapper for print_to_file above
 		void print_to_filename(char *filename);
 
-		// Duplicate this Genome to create a new one with the specified id 
-		Genome *duplicate(int new_id);
-
 		// Duplicate this Genome to create a new one with the specified id and repeat mutations
-		Genome *duplicate(int new_id, bool repeat_mutations);
+		Genome *duplicate(int new_id, int repeat_mutations);
 
 		// For debugging: A number of tests can be run on a genome to check its
 		// integrity

@@ -499,7 +499,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         //If we have a super_champ (Population champion), finish off some special clones
         if ((thechamp->super_champ_offspring) > 0) {
             mom = thechamp;
-            new_genome = (mom->gnome)->duplicate(count);
+            new_genome = (mom->gnome)->duplicate(count, 0);
 
             if ((thechamp->super_champ_offspring) == 1) {
 
@@ -511,7 +511,7 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //      Settings used for published experiments did not use this
             if ((thechamp->super_champ_offspring) > 1) {
 
-                repeat_mut_genome = (thechamp->gnome)->duplicate(count, true);
+                repeat_mut_genome = (mom->gnome)->duplicate(count, 1);
 
                 if ((randfloat() < 0.8) ||
                     (NEAT::mutate_add_link_prob == 0.0))
@@ -542,8 +542,8 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //If we have a Species champion, just clone it
         else if ((!champ_done) && (expected_offspring > 5)) {
             mom = thechamp; //Mom is the champ
-            new_genome = (mom->gnome)->duplicate(count);
-            repeat_mut_genome = (thechamp->gnome)->duplicate(count, true);
+            new_genome = (mom->gnome)->duplicate(count, 0);
+            repeat_mut_genome = (thechamp->gnome)->duplicate(count, 1);
             baby = new Organism(0.0, new_genome, generation);  //Baby is just like mommy
             champ_done = true;
         }
@@ -574,7 +574,9 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             //Finished roulette
             */
             mom = (*curorg);
-            new_genome = (mom->gnome)->duplicate(count);
+            new_genome = (mom->gnome)->duplicate(count, 0);
+            if(mom->fitness > mom->orig_fitness) repeat_mut_genome = (thechamp->gnome)->duplicate(count, 1);
+            else if(mom->fitness < mom->orig_fitness) repeat_mut_genome = (thechamp->gnome)->duplicate(count, -1);
 
             //Do the mutation depending on probabilities of
             //various mutations
