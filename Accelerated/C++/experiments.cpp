@@ -317,7 +317,7 @@ Population *pole1_test(int gens) {
         pop->verify();
 
         for (gen = 1; gen <= gens; gen++) {
-            cout << "Generation " << gen << endl;
+            cout << "Generation " << gen << " run = " << expcount << endl;
 
             fnamebuf = new ostringstream();
             (*fnamebuf) << "gen_" << gen << ends;  //needs end marker
@@ -325,10 +325,8 @@ Population *pole1_test(int gens) {
 #ifndef NO_SCREEN_OUT
             cout << "name of fname: " << fnamebuf->str() << endl;
 #endif
-
             char temp[50];
             sprintf(temp, "gen_%d", gen);
-
             status = pole1_epoch(pop, gen, temp);
             //status=(pole1_epoch(pop,gen,fnamebuf->str()));
 
@@ -639,13 +637,11 @@ Population *pole2_test(int gens, int velocity) {
     cout << "Start Genome: " << start_genome << endl;
 
     for (run = 0; run < NEAT::num_runs; run++) {
-
         cout << "RUN #" << run << endl;
 
         //Spawn the Population from starter gene
         cout << "Spawning Population off Genome" << endl;
         pop = new Population(start_genome, NEAT::pop_size);
-
         //Alternative way to start off of randomly connected genomes
         //pop=new Population(pop_size,7,1,10,false,0.3);
 
@@ -669,7 +665,6 @@ Population *pole2_test(int gens, int velocity) {
 
             highscore = pole2_epoch(pop, gen, temp, velocity, thecart, champg, champn, winnernum, oFile);
             //highscore=pole2_epoch(pop,gen,fnamebuf->str(),velocity, thecart,champg,champn,winnernum,oFile);
-
             //cout<<"GOT HIGHSCORE FOR GEN "<<gen<<": "<<highscore-1<<endl;
 
             record[run][gen - 1] = highscore - 1;
@@ -686,21 +681,16 @@ Population *pole2_test(int gens, int velocity) {
             }
 
             //In non-MARKOV, stop right at winning (could go beyond if desired)
-            if ((!(thecart->MARKOV)) && ((pop->winnergen) != 0))
-                gen = gens + 1;
+            if ((!(thecart->MARKOV)) && ((pop->winnergen) != 0)) gen = gens + 1;
 
 #ifndef NO_SCREEN_OUT
             cout << "gen = " << gen << " gens = " << gens << " run = " << run << endl;
 #endif
-
             if (gen == (gens - 1)) oFile << "FAIL: Last gen on run " << run << endl;
-
-
         }
 
         if (run < NEAT::num_runs - 1) delete pop;
         delete thecart;
-
     }
 
     cout << "Generation highs: " << endl;
@@ -1032,19 +1022,14 @@ int pole2_epoch(Population *pop, int generation, char *filename, bool velocity,
 
 bool pole2_evaluate(Organism *org, bool velocity, CartPole *thecart) {
     Network *net;
-
     int thresh;  /* How many visits will be allowed before giving up
 		  (for loop detection)  NOW OBSOLETE */
-
     int pause;
-
     net = org->net;
-
     thresh = 100;  //this is obsolete
 
     //DEBUG :  Check flushedness of org
     //org->net->flush_check();
-
     //Try to balance a pole now
     org->fitness = thecart->evalNet(net, thresh);
 
@@ -1110,13 +1095,10 @@ bool pole2_evaluate(Organism *org, bool velocity, CartPole *thecart) {
 
 CartPole::CartPole(bool randomize, bool velocity) {
     maxFitness = 100000;
-
     MARKOV = velocity;
-
     MIN_INC = 0.001;
     POLE_INC = 0.05;
     MASS_INC = 0.01;
-
     LENGTH_2 = 0.05;
     MASSPOLE_2 = 0.01;
 
@@ -1142,7 +1124,6 @@ double CartPole::evalNet(Network *net, int thresh) {
     if (nmarkov_long) nmarkovmax = 100000;
     else if (generalization_test) nmarkovmax = 1000;
     else nmarkovmax = 1000;
-
 
     init(0);
 

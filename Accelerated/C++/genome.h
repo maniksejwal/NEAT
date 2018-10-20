@@ -103,7 +103,7 @@ namespace NEAT {
 		void print_to_filename(char *filename);
 
 		// Duplicate this Genome to create a new one with the specified id and repeat mutations
-		Genome *duplicate(int new_id, int repeat_mutations, double parent_fitnes);
+		Genome *duplicate(int new_id, int repeat_mutation, double parent_fitnes);
 
 		// For debugging: A number of tests can be run on a genome to check its
 		// integrity

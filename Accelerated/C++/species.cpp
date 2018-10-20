@@ -15,6 +15,7 @@
 */
 #include "species.h"
 #include "organism.h"
+#include "neatmain.h"
 #include <cmath>
 #include <iostream>
 
@@ -512,8 +513,6 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                   Settings used for published experiments did not use this*/
             if ((thechamp->super_champ_offspring) > 1) {
 
-                repeat_mut_genome = (mom->gnome)->duplicate(count + 1, 1, mom->fitness);
-
                 if ((randfloat() < 0.8) ||
                     (NEAT::mutate_add_link_prob == 0.0))
                     //ABOVE LINE IS FOR:
@@ -544,22 +543,19 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
         else if ((!champ_done) && (expected_offspring > 5)) {
             mom = thechamp; //Mom is the champ
             new_genome = (mom->gnome)->duplicate(count, 0, 0);
-            repeat_mut_genome = (mom->gnome)->duplicate(count + 1, 1, mom->fitness);
+            //repeat_mut_genome = (mom->gnome)->duplicate(count + 1, 0, mom->fitness);
             baby = new Organism(0.0, new_genome, generation);  //Baby is just like mommy
             champ_done = true;
         }
             //First, decide whether to mate or mutate
             //If there is only one organism in the pool, then always mutate
-        else if ((randfloat() < NEAT::mutate_only_prob) ||
-                 poolsize == 0) {
+        else if ((randfloat() < NEAT::mutate_only_prob) || poolsize == 0) {
 
             //Choose the random parent
-
             //RANDOM PARENT CHOOSER
             orgnum = randint(0, poolsize);
             curorg = organisms.begin();
-            for (orgcount = 0; orgcount < orgnum; orgcount++)
-                ++curorg;
+            for (orgcount = 0; orgcount < orgnum; orgcount++) ++curorg;
 
             /*
             //Roulette Wheel
@@ -576,10 +572,15 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             */
             mom = (*curorg);
             new_genome = (mom->gnome)->duplicate(count, 0, 0);
-            if (mom->gnome->parent_fitness > 0 && mom->fitness > mom->gnome->parent_fitness)
+
+            // Repeat mutation
+            if (mom->gnome->parent_fitness > 0 && mom->fitness > mom->gnome->parent_fitness) {
                 repeat_mut_genome = (mom->gnome)->duplicate(count + 1, 1, mom->fitness);
-            else if (mom->gnome->parent_fitness > 0 && mom->fitness < mom->gnome->parent_fitness)
+                NEAT::log_repeats++;
+            } else if (mom->gnome->parent_fitness > 0 && mom->fitness < mom->gnome->parent_fitness) {
                 repeat_mut_genome = (mom->gnome)->duplicate(count + 1, -1, mom->fitness);
+                NEAT::log_reverts++;
+            }
 
             //Do the mutation depending on probabilities of
             //various mutations
@@ -615,11 +616,11 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
                 if (randfloat() < NEAT::mutate_link_weights_prob) {
                     //std::cout<<"mutate_link_weights"<<std::endl;
                     new_genome->mutate_link_weights(mut_power, 1.0, GAUSSIAN);
+                    new_genome->parent_fitness = mom->fitness;
                 }
                 if (randfloat() < NEAT::mutate_toggle_enable_prob) {
                     //std::cout<<"mutate toggle enable"<<std::endl;
                     new_genome->mutate_toggle_enable(1);
-
                 }
                 if (randfloat() < NEAT::mutate_gene_reenable_prob) {
                     //std::cout<<"mutate gene reenable"<<std::endl;
@@ -653,7 +654,6 @@ bool Species::reproduce(int generation, Population *pop, std::vector<Species *> 
             mom = (*curorg);
 
             //Choose random dad
-
             if ((randfloat() > NEAT::interspecies_mate_rate)) {
                 //Mate within Species
 

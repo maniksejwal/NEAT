@@ -20,6 +20,8 @@
 #include <cstring>
 
 namespace NEAT {
+	extern int log_repeats;
+	extern int log_reverts;
 
 	const int num_trait_params = 8;
 
@@ -30,13 +32,15 @@ namespace NEAT {
 	extern double weight_mut_power;  // The power of a linkweight mutation 
 	extern double recur_prob;        // Prob. that a link mutation which doesn't have to be recurrent will be made recurrent 
 
-	// These 3 global coefficients are used to determine the formula for
-	// computating the compatibility between 2 genomes.  The formula is:
-	// disjoint_coeff*pdg+excess_coeff*peg+mutdiff_coeff*mdmg.
-	// See the compatibility method in the Genome class for more info
-	// They can be thought of as the importance of disjoint Genes,
-	// excess Genes, and parametric difference between Genes of the
-	// same function, respectively. 
+	/*
+	These 3 global coefficients are used to determine the formula for
+	computating the compatibility between 2 genomes.  The formula is:
+	disjoint_coeff*pdg+excess_coeff*peg+mutdiff_coeff*mdmg.
+	See the compatibility method in the Genome class for more info
+	They can be thought of as the importance of disjoint Genes,
+	excess Genes, and parametric difference between Genes of the
+	same function, respectively.
+	*/
 	extern double disjoint_coeff;
 	extern double excess_coeff;
 	extern double mutdiff_coeff;

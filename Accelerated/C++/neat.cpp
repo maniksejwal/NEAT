@@ -20,6 +20,8 @@
 #include <cstring>
 #include <iostream>
 
+int NEAT::log_repeats = 0;
+int NEAT::log_reverts = 0;
 double NEAT::trait_param_mut_prob = 0;
 double NEAT::trait_mutation_power = 0; // Power of mutation on a signle trait param 
 double NEAT::linktrait_mut_sig = 0; // Amount that mutation_num changes for a trait change inside a link
@@ -56,58 +58,57 @@ int NEAT::num_runs = 0;
 //MRandomR250 NEAT::NEATRandGen = MRandomR250(Platform::getRealMilliseconds()); // Random number generator; can pass seed value as argument here
 //MRandomR250 NEAT::NEATRandGen = MRandomR250();
 /*
-//const char* NEAT::getUnit(const char *string, int index, const char *set)
-//{
-//	int sz;
-//	while(index--)
-//	{
-//		if(!*string)
-//			return "";
-//		sz = strcspn(string, set);
-//		if (string[sz] == 0)
-//			return "";
-//		string += (sz + 1);    
-//	}
-//	sz = strcspn(string, set);
-//	if (sz == 0)
-//		return "";
-//	char *ret = getReturnBuffer(sz+1);
-//	strncpy(ret, string, sz);
-//	ret[sz] = '\0';
-//	return ret;
-//}
-//
-//const char* NEAT::getUnits(const char *string, int startIndex, int endIndex, const char *set)
-//{
-//	int sz;
-//	int index = startIndex;
-//	while(index--)
-//	{
-//		if(!*string)
-//			return "";
-//		sz = strcspn(string, set);
-//		if (string[sz] == 0)
-//			return "";
-//		string += (sz + 1);    
-//	}
-//	const char *startString = string;
-//	while(startIndex <= endIndex--)
-//	{
-//		sz = strcspn(string, set);
-//		string += sz;
-//		if (*string == 0)
-//			break;
-//		string++;
-//	}
-//	if(!*string)
-//		string++;
-//	int totalSize = (int(string - startString));
-//	char *ret = getReturnBuffer(totalSize);
-//	strncpy(ret, startString, totalSize - 1);
-//	ret[totalSize-1] = '\0';
-//	return ret;
-//}
-//
+const char* NEAT::getUnit(const char *string, int index, const char *set)
+{
+	int sz;
+	while(index--)
+	{
+		if(!*string)
+			return "";
+		sz = strcspn(string, set);
+		if (string[sz] == 0)
+			return "";
+		string += (sz + 1);
+	}
+	sz = strcspn(string, set);
+	if (sz == 0)
+		return "";
+	char *ret = getReturnBuffer(sz+1);
+	strncpy(ret, string, sz);
+	ret[sz] = '\0';
+	return ret;
+}
+
+const char* NEAT::getUnits(const char *string, int startIndex, int endIndex, const char *set)
+{
+	int sz;
+	int index = startIndex;
+	while(index--)
+	{
+		if(!*string)
+			return "";
+		sz = strcspn(string, set);
+		if (string[sz] == 0)
+			return "";
+		string += (sz + 1);
+	}
+	const char *startString = string;
+	while(startIndex <= endIndex--)
+	{
+		sz = strcspn(string, set);
+		string += sz;
+		if (*string == 0)
+			break;
+		string++;
+	}
+	if(!*string)
+		string++;
+	int totalSize = (int(string - startString));
+	char *ret = getReturnBuffer(totalSize);
+	strncpy(ret, startString, totalSize - 1);
+	ret[totalSize-1] = '\0';
+	return ret;
+}
  */
 int NEAT::getUnitCount(const char *string, const char *set) {
 	int count = 0;
@@ -238,7 +239,7 @@ bool NEAT::load_neat_params(const char *filename, bool output) {
 
     paramFile>>curword;
 	paramFile>>NEAT::num_runs;
-	
+
 
     if(output) {
 	    printf("trait_param_mut_prob=%f\n",trait_param_mut_prob);

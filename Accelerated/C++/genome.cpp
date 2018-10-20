@@ -909,7 +909,7 @@ double Genome::get_last_gene_innovnum() {
     return ((*(genes.end() - 1))->innovation_num) + 1;
 }
 
-Genome *Genome::duplicate(int new_id, int repeat_mutations, double parent_fitnes) {
+Genome *Genome::duplicate(int new_id, int repeat_mutation, double parent_fitnes) {
     //Collections for the new Genome
     std::vector<Trait *> traits_dup;
     std::vector<NNode *> nodes_dup;
@@ -964,28 +964,22 @@ Genome *Genome::duplicate(int new_id, int repeat_mutations, double parent_fitnes
 
         inode = (((*curgene)->lnk)->in_node)->dup;
         onode = (((*curgene)->lnk)->out_node)->dup;
-        double delta = repeat_mutations * 0.25 * ((*curgene)->lnk)->delta;
+        double delta = repeat_mutation * 0 * ((*curgene)->lnk)->delta;
 
         //Get a pointer to the trait expressed by this gene
         traitptr = ((*curgene)->lnk)->linktrait;
         if (traitptr == 0) assoc_trait = 0;
         else {
             curtrait = traits_dup.begin();
-            while (((*curtrait)->trait_id) != (traitptr->trait_id))
-                ++curtrait;
+            while (((*curtrait)->trait_id) != (traitptr->trait_id)) ++curtrait;
             assoc_trait = (*curtrait);
         }
-
         newgene = new Gene(*curgene, assoc_trait, inode, onode, delta);
         genes_dup.push_back(newgene);
-
     }
-
     //Finally, return the genome
     newgenome = new Genome(new_id, traits_dup, nodes_dup, genes_dup, parent_fitnes);
-
     return newgenome;
-
 }
 
 void Genome::mutate_random_trait() {

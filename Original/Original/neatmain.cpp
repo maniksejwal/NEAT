@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
     /* Seed the random-number generator with current time so that
         the numbers will be different every time we run.    */
     srand((unsigned) time(NULL));
-
+    /*
     if (argc != 2) {
         cerr << "A NEAT parameters file (.ne file) is required to run the experiments!" << endl;
         return -1;
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
     // Load in the params
     cout << "\tneatmain::main::argv = " << argv << "\t\tneatmain::main::argv[1] = " << argv[1] << endl;
     NEAT::load_neat_params(argv[1], true);
-    cout << "loaded" << endl;
+    cout << "loaded" << endl;*/
     /*
     //Test a genome file on pole balancing
     Genome *g;
@@ -89,25 +89,29 @@ int main(int argc, char *argv[]) {
     //and then visualize the speciation that took place
     //p=xor_test(100);  //100 generation XOR experiment
     */
-    int choice;
+    int choice = argv[1][0]-'0';
     cout << "Please choose an experiment: " << endl;
     cout << "1 - 1-pole balancing" << endl;
     cout << "2 - 2-pole balancing, velocity info provided" << endl;
     cout << "3 - 2-pole balancing, no velocity info provided (non-markov)" << endl;
     cout << "4 - XOR" << endl;
     cout << "Number: ";
-    cin >> choice;
+    //cin >> choice;
     switch (choice) {
         case 1:
+            NEAT::load_neat_params("../test.ne", true);
             p = pole1_test(100);
             break;
         case 2:
+            NEAT::load_neat_params("../pole2_markov.ne", true);
             p = pole2_test(100, 1);
             break;
         case 3:
-            p = pole2_test(100, 0);
+            NEAT::load_neat_params("../p2nv.ne", true);
+            p = pole2_test(200, 0);
             break;
         case 4:
+            NEAT::load_neat_params("../test.ne", true);
             p = xor_test(100);
             break;
         default:
